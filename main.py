@@ -40,15 +40,13 @@ def end(size, lights, device):
                                                     int(device)
                                                     )
                         )
-#Форма
+
 @app.route('/form')
 def form():
     return render_template('form.html')
 
-#Результаты формы
 @app.route('/submit', methods=['POST'])
 def submit_form():
-    #Создай переменные для сбора информации
     name = request.form['name']
     email = request.form['email']
     address = request.form['address']
@@ -59,9 +57,7 @@ def submit_form():
         f.write(address+ '\n')
         f.write(date+ '\n')
 
-    # здесь вы можете сохранить данные или отправить их по электронной почте
     return render_template('form_result.html', 
-                           #Помести переменные
                            name=name,email=email,address=address,date=date
                            )
 
