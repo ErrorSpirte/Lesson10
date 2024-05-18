@@ -1,6 +1,4 @@
-#Импорт
 from flask import Flask, render_template, request
-
 
 app = Flask(__name__)
 
@@ -15,6 +13,7 @@ def result_calculate(size, lights, device):
 @app.route('/')
 def index():
     return render_template('index.html')
+
 #Вторая страница
 @app.route('/<size>')
 def lights(size):
